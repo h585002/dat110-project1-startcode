@@ -6,7 +6,7 @@ import no.hvl.dat110.rpc.RPCServerStopStub;
 
 public class Controller  {
 	
-	private static int N = 5;
+	private static int N = 200;
 	
 	public static void main (String[] args) {
 		

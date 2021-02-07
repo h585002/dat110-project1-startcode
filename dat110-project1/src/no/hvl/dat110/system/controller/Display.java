@@ -1,3 +1,4 @@
+  
 package no.hvl.dat110.system.controller;
 
 import no.hvl.dat110.TODO;
@@ -10,8 +11,11 @@ public class Display extends RPCStub {
 	public void write(String message) {
 
 		// TODO
-		// implement marshalling, call and unmarshalling for write RPC method
+		// implement marshalling,call and unmarshalling for write RPC method
 
-		throw new UnsupportedOperationException(TODO.method());
-	}
+
+		byte[] request = RPCUtils.marshallString(RPCID, message);
+		byte[] response = rpcclient.call(request);
+		RPCUtils.unmarshallVoid(response);	
+		}
 }
