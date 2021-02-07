@@ -25,10 +25,14 @@ public class MessagingClient {
 		
 		// create TCP socket for client and connection
 		// create connection object
-		
+		try {
 		clientSocket = new Socket(server, port);
 		connection = new Connection(clientSocket);
 
+		} 
+		catch(IOException e) {
+			System.out.println("error code: " + e);
+		}
 		return connection;
 	}
 }

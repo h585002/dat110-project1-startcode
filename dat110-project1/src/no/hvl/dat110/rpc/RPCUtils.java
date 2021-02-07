@@ -15,11 +15,9 @@ public class RPCUtils {
 
 		byte[] encoded;
 
-		// TODO: marshall RPC identifier and string into byte array
+		//marshall RPC identifier and string into byte array
 
-		if (true) {
-			throw new UnsupportedOperationException(TODO.method());
-		}
+		
 
 		return encoded;
 	}
@@ -28,12 +26,11 @@ public class RPCUtils {
 
 		String decoded;
 
-		// TODO: unmarshall String contained in data into decoded
-
-		if (true) {
-			throw new UnsupportedOperationException(TODO.method());
-		}
-
+		//unmarshall String contained in data into decoded
+        
+		decoded = new String(data, 1, data.length-1);
+		
+		
 		return decoded;
 	}
 
@@ -41,11 +38,10 @@ public class RPCUtils {
 
 		byte[] encoded;
 
-		// TODO: marshall RPC identifier in case of void type
+		//marshall RPC identifier in case of void type
 
-		if (true) {
-			throw new UnsupportedOperationException(TODO.method());
-		}
+		encoded = new byte[1];
+		encoded[0] = rpcid;
 
 		return encoded;
 
