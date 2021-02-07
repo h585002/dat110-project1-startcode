@@ -3,6 +3,7 @@ package no.hvl.dat110.rpc;
 import java.util.Arrays;
 
 import no.hvl.dat110.TODO;
+import no.hvl.dat110.messaging.MessageConfig;
 
 public class RPCUtils {
 
@@ -13,10 +14,13 @@ public class RPCUtils {
 	
 	public static byte[] marshallString(byte rpcid, String str) {
 
-		byte[] encoded;
+		byte[] encoded = new byte[MessageConfig.SEGMENTSIZE];
 
 		//marshall RPC identifier and string into byte array
-
+        
+		for(int i = 0; i < str.length(); i++) {
+			encoded[i+1] = (byte) str.charAt(i);
+		}
 		
 
 		return encoded;
@@ -77,11 +81,9 @@ public class RPCUtils {
 
 		byte[] encoded;
 
-		// TODO: marshall RPC identifier and string into byte array
+		//marshall RPC identifier and string into byte array
 
-		if (true) {
-			throw new UnsupportedOperationException(TODO.method());
-		}
+		
 
 		return encoded;
 	}
@@ -90,11 +92,9 @@ public class RPCUtils {
 
 		int decoded;
 
-		// TODO: unmarshall integer contained in data
+		//unmarshall integer contained in data
 
-		if (true) {
-			throw new UnsupportedOperationException(TODO.method());
-		}
+		
 
 		return decoded;
 
