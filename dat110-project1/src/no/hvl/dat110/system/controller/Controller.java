@@ -6,12 +6,15 @@ import no.hvl.dat110.rpc.RPCServerStopStub;
 
 public class Controller  {
 	
-	private static int N = 200;
 	
-	public static void main (String[] args) {
+	private static int N = 5;
+	
+	public static void main (String[] args) throws InterruptedException {
+		
 		
 		Display display = new Display();
 		Sensor sensor = new Sensor();
+		Thread s = new Thread();
 		
 		RPCClient displayclient,sensorclient;
 		
@@ -40,9 +43,17 @@ public class Controller  {
 		
 		// loop while reading from sensor and write to display via RPC
 		
-		for(int i = 0; i<N; i++) {
+		for (int i = 0; i < N; i++) {
+
 			int temp = sensor.read();
-			display.write("Temperatur: " + temp);
+			System.out.println(temp);
+			display.write(Integer.toString(temp));
+			
+			try {
+				Thread.sleep(1000);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 		
 		stopdisplay.stop();
