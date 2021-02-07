@@ -14,7 +14,7 @@ public class Message {
 	}
 
 	public Message() {
-		super();
+		super();//
 	}
 
 	public byte[] getData() {
