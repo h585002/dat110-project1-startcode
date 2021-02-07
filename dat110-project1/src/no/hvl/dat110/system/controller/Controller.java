@@ -51,7 +51,7 @@ public class Controller  {
 		displayclient.disconnect();
 		sensorclient.disconnect();
 		
-		System.out.println("Controller stopping ...");
+		System.out.println("Controller stopping ..."); //
 		
 	}
 }
